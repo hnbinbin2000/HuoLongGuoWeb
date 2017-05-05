@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta http-equiv="refresh" content="3"> -->
+    <title>title</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_wvi1i6d1hzvq85mi.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <div class="container">
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#"><img src="images/logo.png" alt=""></a>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse clearfix" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="cur"><a href="#">首页</a></li>
+              <li><a href="#">火龙果</a></li>
+              <li id="sort2">
+                <a href="list.html?page=sort2">产业资讯</a>
+                <ul class="dropdown-menu">
+                  <li id="sort21"><a href="list.html?page=sort21">新闻资讯</a></li>
+                  <li id="sort22"><a href="list.html?page=sort22">产业动态</a></li>
+                  <li id="sort23"><a href="list.html?page=sort23">领导关怀</a></li>
+                </ul>
+              </li>
+              <li id="sort3">
+                <a href="list.html?page=sort3">产区动态</a>
+                <ul class="dropdown-menu">
+                  <li id="sort31"><a href="list.html?page=sort31">镇宁县</a></li>
+                  <li id="sort32"><a href="list.html?page=sort32">罗甸县</a></li>
+                  <li id="sort33"><a href="list.html?page=sort33">关岭县</a></li>
+                  <li id="sort34"><a href="list.html?page=sort34">贞丰县</a></li>
+                  <li id="sort35"><a href="list.html?page=sort35">望谟县</a></li>
+                  <li id="sort36"><a href="list.html?page=sort36">册亨县</a></li>
+                </ul>
+              </li>
+              <li id="sort4">
+                <a href="list.html?page=sort4">技术服务</a>
+                <ul class="dropdown-menu">
+                  <li id="sort41"><a href="list.html?page=sort41">品种资源</a></li>
+                  <li id="sort42"><a href="list.html?page=sort42">种植管理</a></li>
+                  <li id="sort43"><a href="list.html?page=sort43">专家介绍</a></li>
+                  <li id="sort44"><a href="list.html?page=sort44">视频咨询</a></li>
+                  <li id="sort45"><a href="list.html?page=sort45">语音咨询</a></li>
+                  <li id="sort46"><a href="list.html?page=sort46">病虫防治</a></li>
+                  <li id="sort47"><a href="list.html?page=sort47">花果管理</a></li>
+                  <li id="sort48"><a href="list.html?page=sort48">保鲜加工</a></li>
+                  <li id="sort49"><a href="list.html?page=sort49">标准规范</a></li>
+                  <li id="sort410"><a href="list.html?page=sort410">短信咨询</a></li>
+                  <li id="sort411"><a href="list.html?page=sort411">专家观点</a></li>
+                </ul>
+              </li>
+              <li  id="sort5">
+                <a href="list.html?page=sort5">
+                  价格信息
+                </a>
+                <ul class="dropdown-menu">
+                  <li id="sort51"><a href="list.html?page=sort51">价格信息</a></li>
+                  <li id="sort52"><a href="list.html?page=sort52">市场行情</a></li>
+                  <li id="sort53"><a href="list.html?page=sort53">供需信息</a></li>
+                  <li id="sort54"><a href="list.html?page=sort54">农资推介</a></li>
+                  <li id="sort55"><a href="list.html?page=sort55">企业展台</a></li>
+                </ul>
+              </li>
+              <li><a href="#">质量监测</a></li>
+              <li><a href="#">产品追溯</a></li>
+              <li>
+                <a href="#">果园检测</a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">永乐</a></li>
+                  <li><a href="#">关岭</a></li>
+                  <li><a href="#">普定</a></li>
+                  <li><a href="#">罗甸</a></li>
+                  <li><a href="#">关岭2</a></li>
+                  <li><a href="#">惠水</a></li>
+                </ul>
+              </li>
+              <div class="move-bg"></div>
+            </ul>
+            
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+    </div>
+
+    <div class="banner">
+      <div class="container">
+        <img class="animated fadeIn" src="images/banner.png" alt="">
+      </div>
+    </div>
+
+    <div class="container mt30" id="mediaList">
+      <div class="row">
+        <div class="col-xs-8" >
+
+          <div class="media" v-cloak v-for="item of media">
+            <div class="media-left media-middle">
+              <a href="#">
+                <img class="media-object animated fadeIn" :src="item.mediaImg" alt="...">
+              </a>
+            </div>
+            <div class="media-body">
+              <a href="#">
+              <h4 class="media-heading">{{item.mediaHeader}}<span class="label label-danger" v-if="item.hot">danger</span></h4>
+              <p class="media-body-mid">{{item.mediaCont}}</p>
+              <p class="media-body-fot">{{item.mediaFot}}</p>
+              </a>
+            </div>
+          </div>
+
+          <div class="page text-center">
+            <ul class="pagination pagination-lg">
+              <li class="active"><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">5</a></li>
+              <li><a href="#">...</a></li>
+            </ul>
+          </div>
+
+        </div>
+        <div class="col-xs-4 border-left">
+          <div class="rgt-item search-box-fir">
+            <form class="">
+              <div class="form-group search-fir">
+                <div class="input-group ">
+                  <input type="text" class="form-control" placeholder="Amount">
+                  <div class="input-group-addon" id="search"><i class="iconfont icon-sousuo"></i></div>
+                </div>
+              </div>
+            </form>
+            <h4 class="rgt-title"><i class="iconfont icon-sanjiao3"></i>产品追溯</h4>
+            <form class="">
+              <div class="form-group search-sec">
+                <div class="input-group ">
+                  <input type="text" class="form-control" placeholder="Amount">
+                  <div class="input-group-addon" id="check">check</div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="border-bottom"></div>
+
+          <div class="rgt-item pb20 pore">
+            <h4 class="rgt-title"><i class="iconfont icon-sanjiao3"></i>果园监测</h4>
+            
+
+            <div class="rgt-banner" v-cloak  :style="{ background: weatherData.stationImg}">
+              <div class="rgt-banner-content">
+                <h5 class="text-center">{{weatherData.station}}</h5>
+                <p><span class="">土壤湿度:{{weatherData.weatherCont.a}}</span><span class="">光照:{{weatherData.weatherCont.b}}</span></p>
+                <p><span class="">土壤水分:{{weatherData.weatherCont.c}}</span><span class="">风向:{{weatherData.weatherCont.d}}</span></p>
+                <p><span class="">降雨量:{{weatherData.weatherCont.e}}</span><span class="">风速:{{weatherData.weatherCont.f}}</span></p>
+                <p><span class="">空气湿度:{{weatherData.weatherCont.g}}</span><span class="">空气湿度:{{weatherData.weatherCont.h}}</span></p>
+              </div>
+              <div class="blur" :style="{ background: weatherData.stationImg}"></div>
+              <div class="bgchange"></div>
+            </div>
+
+
+
+
+            <a href="javascript:;" id="left" @click="left"><img src="images/left.png" alt=""></a>
+            <a href="javascript:;" id="right" @click="right"><img src="images/right.png" alt=""></a>
+          </div>
+          <div class="border-bottom"></div>
+
+          <div class="rgt-item pb20">
+            <h4 class="rgt-title"><i class="iconfont icon-sanjiao3"></i>产业资讯</h4>
+            <div class="media" v-for="item of media2">
+              <div class="media-left media-middle">
+                <a href="#">
+                  <img class="media-object animated fadeIn" :src="item.mediaImg" alt="...">
+                </a>
+              </div>
+              <div class="media-body">
+                <h5 class="media-heading"><a href="#">{{item.mediaHeader}}</a></h5>
+                <p class="media-body-mid">{{item.mediaFot}}</p>
+              </div>
+            </div>
+            <p class="more"><a href="#">查看更多资讯</a></p>
+          </div>
+          <div class="border-bottom"></div>
+
+          <div class="rgt-item pb6">
+            <h4 class="rgt-title"><i class="iconfont icon-sanjiao3"></i>领导关怀</h4>
+            <div class="rgt-banner1">
+              <img class="animated fadeIn" src="images/banner2.png" alt="">
+            </div>
+            <div class="news">
+              <p v-for="item of news"><a href="#">{{item.title}} </a><span class="pull-right text-muted">{{item.time}}</span></p>
+            </div>
+            <p class="more"><a href="#">查看更多资讯</a></p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    
+    <div class="store animated fadeIn">
+      <div class="container">
+        <div class="down">
+          <div class="apple"><img src="images/apple.png" alt=""></div>
+          <div class="android"><img src="images/android.png" alt=""></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer text-center">
+      <div class="">
+        <p>版权所属&copy;贵州火龙果产业信息服务网 网站由贵州农业科技信息研究所负责维护与管理</p>
+        <p>项目名称：贵州精品火龙果产业信息服务系统建设 项目编号：2013GA820002</p>
+        <p>地址：贵州省贵阳市小河区农科院信息所 网站维护电话：18275220699</p>
+      </div>
+    </div>
+
+  </body>
+
+  <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+  <script type="text/javascript" src="js/jquery.color.js"></script>
+  <script type="text/javascript" src="js/jquery.movebg.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/neatshow.min.js"></script>
+  
+  <script type="text/javascript" src="js/vue.min.js"></script>
+  <script type="text/javascript" src="js/api.js"></script>
+  <script type="text/javascript" src="home.js"></script>
+
+  <script type="text/javascript">
+    $(function(){
+      var top;
+      var lock=false;
+      $(window).bind('scroll',function(){
+        top=$(window).scrollTop()
+    
+          if(top>500 && !lock){
+            console.log("ok")
+            $(".navbar,.dropdown-menu").addClass("navbg")
+            lock=true
+          }
+          if(top<500 && lock){
+            console.log("error")
+            $(".navbar,.dropdown-menu").removeClass("navbg")
+            lock=false
+          }
+       
+      });
+
+     
+
+      $(".apple").click(function(){
+        alert("down apple")
+      })
+      $(".android").click(function(){
+        alert("down android")
+      })
+      $("#search").click(function(){
+        alert("search")
+      })
+      $("#check").click(function(){
+        alert("check")
+      })
+
+    })
+    $('img').neatShow();
+  </script>
+</html>
